@@ -11,13 +11,12 @@
     <releaseNotes>@releaseNotes@</releaseNotes>
     <copyright>Copyright byBrick 2015</copyright>    
     <tags>@project@</tags>
-    @dependencies@
+    <dependencies>
+	<group targetFramework="MonoAndroid10">
+		<dependency id="Plugin.CurrentActivity" version="1.0.1"/>
+	</group>	
+	</dependencies>
     @references@
   </metadata>
   @files@
-  <dependencies>
-  <group targetFramework="MonoAndroid10">
-    <dependency id="Plugin.CurrentActivity" version="1.0.1"/>
-  </group>
-</dependencies>
 </package>
