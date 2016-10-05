@@ -153,21 +153,21 @@ Target "Release" DoNothing
 
 // Dependencie
 "Clean"
- // ==> "RestoreNuget"
+  ==> "RestoreNuget"
   ==> "AssemblyInfo"
   ==> "BuildRelease"
   ==> "CreateNugetPackage"
   ==> "Deploy"
 
 
-//"RestoreNuget"
+"RestoreNuget"
 //  ==> 
 "BuildDebug"
 //  ==> "RunTests"
   ==> "CI"
 
 "Release"
- // ==> "RestoreNuget"
+  ==> "RestoreNuget"
   ==> "CompileRelease"
   
 RunTargetOrDefault "CI"

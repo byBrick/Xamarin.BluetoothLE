@@ -2,7 +2,6 @@
 IF NOT [%1]==[help] (
 	cls
 	".nuget\NuGet.exe" "Install" "FAKE" "-OutputDirectory" "packages" "-ExcludeVersion" "-version" "4.21.4"
-	".nuget\NuGet.exe" "Install" "OctopusTools" "-OutputDirectory" "packages" "-ExcludeVersion" "-version" "3.3.8"
 )
 
 SET TARGET="CI"
