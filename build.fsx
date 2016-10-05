@@ -153,7 +153,7 @@ Target "Release" DoNothing
 
 // Dependencie
 "Clean"
- // ==> "RestoreNuget"
+  ==> "RestoreNuget"
   ==> "AssemblyInfo"
   ==> "BuildRelease"
   ==> "CreateNugetPackage"
