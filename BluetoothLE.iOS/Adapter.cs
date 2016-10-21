@@ -329,15 +329,9 @@ namespace BluetoothLE.iOS
         /// <c>false</c>
         public bool IsScanning { get; set; }
 
-        public ManagerState CentralState
-        {
-            get { return _centralState; }
-        }
+        public ManagerState CentralState => _centralState;
 
-        public ManagerState PeripheralState
-        {
-            get { return _peripheralState; }
-        }
+        public ManagerState PeripheralState => _peripheralState;
 
         /// <summary>
         /// Gets the discovered devices.

@@ -108,7 +108,6 @@ namespace BLE.Dev {
 			Devices= new ObservableCollection<DeviceViewModel>();
 			
 			_adapter = DependencyService.Get<IAdapter>();
-			_adapter.SupportsAdvertising();
 			_adapter.AdvertiseStartFailed += AdapterOnAdvertiseStartFailed;
 			_adapter.AdvertiseStartSuccess += AdapterOnAdvertiseStartSuccess;
 

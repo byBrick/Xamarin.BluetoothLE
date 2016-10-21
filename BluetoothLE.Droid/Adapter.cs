@@ -109,13 +109,7 @@ namespace BluetoothLE.Droid
             _centralStateDisposable = CentralStateChanged.Subscribe(state => _centralState = state);
         }
 
-        public ManagerState CentralState
-        {
-            get
-            {
-                return ManagerState.PoweredOn;
-            }
-        } 
+        public ManagerState CentralState => _centralState;
         public ManagerState PeripheralState => _peripheralState;
 
         #region IAdapter implementation
