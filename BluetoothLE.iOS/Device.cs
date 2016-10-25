@@ -71,6 +71,8 @@ namespace BluetoothLE.iOS
 		public void DiscoverServices()
 		{
 			_peripheral.DiscoverServices();
+			_peripheral.DiscoveredService -= DiscoveredService;
+			_peripheral.DiscoveredService += DiscoveredService;
 		}
 
 		/// <summary>
