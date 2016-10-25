@@ -114,7 +114,7 @@ namespace BLE.Dev {
 			_adapter.DeviceDiscovered += AdapterOnDeviceDiscovered;
 
 			var serviceFactory = DependencyService.Get<IServiceFactory>();
-            var service = serviceFactory.CreateService(Guid.Parse("222A1FEB-6173-4059-818A-B826A09526A2"/*"BC2F984A-0000-1000-8000-00805f9b34fb"*/), false);
+            var service = serviceFactory.CreateService(Guid.Parse("222A1FEB-6173-4059-818A-B826A09526A2"/*"BC2F984A-0000-1000-8000-00805f9b34fb"*/), true);
 
 			_adapter.StartAdvertising($"B_{Device.OS}", new List<IService>() { service });
 
