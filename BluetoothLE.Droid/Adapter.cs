@@ -339,7 +339,10 @@ namespace BluetoothLE.Droid
         /// </summary>
         public void StopAdvertising()
         {
-            _adapter.BluetoothLeAdvertiser.StopAdvertising(_advertiseCallback);
+            if (_advertiseCallback != null)
+            {
+                _adapter.BluetoothLeAdvertiser.StopAdvertising(_advertiseCallback);
+            }
         }
 
         public bool SupportsAdvertising()
@@ -477,7 +480,8 @@ namespace BluetoothLE.Droid
             Server.SendResponse(device, requestId, GattStatus.Success, offset, value);
         }
 
-        public override void OnCharacteristicWriteRequest(BluetoothDevice device, int requestId, BluetoothGattCharacteristic characteristic, bool preparedWrite, bool responseNeeded, int offset, byte[] value)
+        public override void OnCharacteristicWriteRequest(BluetoothDevice device, int requestId, BluetoothGattCharacteristic characteristic, bool preparedWrite,
+            bool responseNeeded, int offset, byte[] value)
         {
             characteristic.SetValue(value);
             if (responseNeeded)
