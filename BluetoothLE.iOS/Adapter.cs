@@ -422,7 +422,15 @@ namespace BluetoothLE.iOS
 
                 var guid = uuid.ToString().ToGuid();
                 var dataBytes = new byte[data.Length];
-                System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
+                try
+                {
+                    System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                
 
                 resultData[guid] = dataBytes;
             }
