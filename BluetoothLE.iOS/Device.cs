@@ -101,6 +101,11 @@ namespace BluetoothLE.iOS
 			_peripheral.ReadRSSI();
 		}
 
+	    public void SetConnectionPriority(ConnectionPriority connectionPriority)
+	    {
+	        // No implementation in iOS
+	    }
+
 	    private void PeripheralOnRssiUpdated(object sender, CBRssiEventArgs e)
 	    {
 	        UpdateRssi(e.Rssi);

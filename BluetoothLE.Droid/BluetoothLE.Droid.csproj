@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="AdvertiseCallback.cs" />
     <Compile Include="BroadcastListener.cs" />
+    <Compile Include="Extensions\ConnectionPriorityExtension.cs" />
     <Compile Include="Extensions\StateExtentions.cs" />
     <Compile Include="Factory\CharacteristicsFactory.cs" />
     <Compile Include="Factory\ServiceFactory.cs" />

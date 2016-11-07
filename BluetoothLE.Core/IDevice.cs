@@ -74,5 +74,7 @@ namespace BluetoothLE.Core
 		/// Refresh RSSI value from the device.
 		/// </summary>
 		void RefreshRssi();
+
+	    void SetConnectionPriority(ConnectionPriority connectionPriority);
 	}
 }

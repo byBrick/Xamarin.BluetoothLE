@@ -7,6 +7,7 @@ using Android.Content;
 using Android.OS;
 using BluetoothLE.Core;
 using BluetoothLE.Core.Events;
+using BluetoothLE.Droid.Extensions;
 using Debug = System.Diagnostics.Debug;
 
 namespace BluetoothLE.Droid {
@@ -135,7 +136,12 @@ namespace BluetoothLE.Droid {
 			_gatt?.ReadRemoteRssi();
 		}
 
-		/// <summary>
+	    public void SetConnectionPriority(ConnectionPriority connectionPriority)
+	    {
+	        _gatt?.RequestConnectionPriority(connectionPriority.ToGattConnectionPriority());
+	    }
+
+	    /// <summary>
 		///     Gets the unique identifier for the device
 		/// </summary>
 		/// <value>The device identifier</value>
