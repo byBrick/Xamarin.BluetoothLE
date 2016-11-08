@@ -259,7 +259,8 @@ namespace BluetoothLE.Droid
                 }
             }
             IsScanning = false;
-            _adapter.BluetoothLeScanner?.StopScan(_scanCallback);
+            if (_scanCallback != null)
+                _adapter.BluetoothLeScanner?.StopScan(_scanCallback);
         }
 
         /// <summary>
