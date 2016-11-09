@@ -267,6 +267,9 @@ namespace BluetoothLE.iOS
         public void ConnectToDevice(IDevice device)
         {
             var peripheral = (CBPeripheral) device.NativeDevice;
+            if (peripheral == null)
+                return;
+
             _centralManager.ConnectPeripheral(peripheral);
         }
 
@@ -398,6 +401,8 @@ namespace BluetoothLE.iOS
         private static Dictionary<Guid, byte[]> ProcessData(NSDictionary advertisementData)
         {
             var resultData = new Dictionary<Guid, byte[]>();
+            if (advertisementData == null)
+                return resultData;
 
             if (!advertisementData.ContainsKey(CBAdvertisement.DataServiceDataKey))
             {
@@ -421,18 +426,7 @@ namespace BluetoothLE.iOS
                 }
 
                 var guid = uuid.ToString().ToGuid();
-                var dataBytes = new byte[data.Length];
-                try
-                {
-                    System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
-                }
-                catch (Exception)
-                {
-                    continue;
-                }
-                
-
-                resultData[guid] = dataBytes;
+                resultData[guid] = data.ToArray();
             }
             return resultData;
         }
